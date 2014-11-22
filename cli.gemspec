@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Cli::VERSION
   spec.authors       = ["od3n"]
   spec.email         = ["mr.od3n@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Dainty::Cli allows you to store and manipulate bookmarks using a command-line interface.}
+  spec.description   = %q{Dainty::Cli allows you to store and manipulate bookmarks using a command-line interface.}
   spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.license       = ""
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
