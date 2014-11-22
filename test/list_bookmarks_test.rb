@@ -1,3 +1,5 @@
+require "httparty"
+require "cli/bookmark"
 require "minitest_helper"
 require "cli/services/list_bookmarks"
 
