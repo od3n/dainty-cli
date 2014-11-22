@@ -16,7 +16,19 @@ describe Cli::App do
 			]
 		end # stdout, stderr
 
-		puts error
 		output.must_include "Created bookmark for 'Net Tuts'."
+	end
+
+	it "updates a bookmark" do
+		output, error = capture_io do
+			Cli::App.start [
+				"update",
+				"--id=3",
+				"--title='Jose Mota'",
+				"--url='http://josemota.net"
+			]
+		end # stdout, stderr
+
+		output.must_include "Updated bookmark, it is now 'Jose Mota'."
 	end
 end

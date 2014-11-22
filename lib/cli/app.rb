@@ -31,5 +31,19 @@ module Cli
 				puts "Created bookmark for #{options[:title]}."
 			end
 		end
-	end
+
+		desc :update, "Updates a bookmark"
+		option :id, required: true
+		option :title
+		option :url
+		def update
+			service = UpdateBookmark.new(
+				id: options[:id],
+				title: options[:title],
+				url: options[:url]
+			)
+			if service.update
+				puts "Updated bookmark, it is now #{options[:title]}."
+			end
+		end	end
 end
