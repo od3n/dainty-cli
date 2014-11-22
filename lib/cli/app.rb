@@ -2,6 +2,17 @@ require 'thor'
 require 'cli'
 
 module Cli
+	##
+	# This Thor application is responsible for providing the interface to the
+	# command-line user
+	#
+	# @example Listing bookmarks
+	#
+	#  dainty list
+	#
+	# @example Creating bookmark
+	#
+	#  dainty create --title "My Bookmark" --url "http://example.com"
 	class App < Thor
 		desc :list, "List bookmarks"
 		def list
