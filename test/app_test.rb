@@ -4,7 +4,7 @@ require 'cli/app'
 describe Cli::App do
 	it "prints the list of bookmarks" do
 		output = capture_io { Cli::App.start %w(list) }.first #stdout
-		output.must_include "Tuts+"
+		output.must_include "Tuts"
 	end
 
 	it "creates a bookmark" do
