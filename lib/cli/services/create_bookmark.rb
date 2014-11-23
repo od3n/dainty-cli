@@ -1,4 +1,5 @@
 class CreateBookmark < Service
+	attr_reader :bookmark
 	def initialize data
 		@title = data[:title]
 		@url = data[:url]
@@ -6,7 +7,7 @@ class CreateBookmark < Service
 
 	def create
 		response = request("/bookmarks", :post, body: post_data)
-
+    	@bookmark = Bookmark.new response["bookmark"]
 		response.code == 201
 	end
 

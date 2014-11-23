@@ -31,4 +31,16 @@ describe Cli::App do
 
 		output.must_include "Updated bookmark, it is now 'Jose Mota'."
 	end
+
+	it "removes a bookmark" do
+		create_bookmark = CreateBookmark.new title: "A", url: "a.com"
+		create_bookmark.create
+		id = create_bookmark.bookmark.id
+
+		output, error = capture_io do
+			Cli::App.start [ 'remove', id.to_s ]
+		end
+
+		output.must_include "Removed bookmark with id #{id.to_s}."
+	end
 end

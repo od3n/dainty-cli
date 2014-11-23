@@ -1,10 +1,10 @@
-Class RemoveBookmark < Service
+class RemoveBookmark < Service
 	def initialize id
 		@id = id
 	end
 
 	def remove
-		response = request "/bookmarks/#{@id}", :delete
+		response = request "/bookmarks/#@id", :delete
 		response.code == 204 # No Content
 	end
 end

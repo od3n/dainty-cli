@@ -4,13 +4,13 @@ require 'cli'
 module Cli
 	##
 	# This Thor application is responsible for providing the interface to the
-	# command-line user
+	# command-line user.
 	#
 	# @example Listing bookmarks
 	#
 	#  dainty list
 	#
-	# @example Creating bookmark
+	# @example Creating a bookmark
 	#
 	#  dainty create --title "My Bookmark" --url "http://example.com"
 	class App < Thor
@@ -45,5 +45,14 @@ module Cli
 			if service.update
 				puts "Updated bookmark, it is now #{options[:title]}."
 			end
-		end	end
+		end
+
+		desc :remove, "Removes a bookmark"
+		def remove id
+			service = RemoveBookmark.new id
+			if service.remove
+				puts "Removed bookmark with id #{id}."
+			end
+		end
+	end
 end
