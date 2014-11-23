@@ -17,8 +17,13 @@ module Cli
 		desc :list, "List bookmarks"
 		def list
 			list = ListBookmarks.new.list
+			puts "# List of bookmarks"
 			list.each do |bookmark|
 				puts bookmark.title, bookmark.url
+			end
+
+			if list.empty?
+				puts "You have no bookmarks."
 			end
 		end
 

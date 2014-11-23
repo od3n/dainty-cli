@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'cli/app'
+require "yaml"
+require "httparty"
+
+Cli::Config.load :production
 Cli::App.start ARGV

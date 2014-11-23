@@ -1,6 +1,6 @@
 class Service
 	def host
-		"http://localhost:3000"
+		"http://#{Cli::Config.host}"
 	end
 
 	def request url, method = :get, *args
