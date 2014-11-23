@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'cli/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "cli"
+  spec.name          = "dainty"
   spec.version       = Cli::VERSION
   spec.authors       = ["od3n"]
   spec.email         = ["mr.od3n@gmail.com"]
